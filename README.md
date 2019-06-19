@@ -30,6 +30,8 @@ I would try to keep it up to date with the different Updates from es_extended.
 
 Last update date: 06/19/2019  by Slewog.
 
+Does not work with whitelist trades like policeman, mecano etcccc
+
 ----------------------------------------------------------------------------------------------------------------
 
 Si vous avez déja la dernière versions du es_extended : https://github.com/ESX-Org/es_extended
@@ -65,6 +67,8 @@ J'essayerait de la tenir à jour avec les différentes MàJ de es_extended.
 
 Date de dernière mise à jours : 19/06/2019 par Slewog.
 
+
+Ne fonctionne pas avec les métiers whitelist comme policier , mecano etcccc
 
 
 
