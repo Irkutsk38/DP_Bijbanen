@@ -10,6 +10,7 @@ To install it:
 - Add SQL: esx_doublejob.sql to your database.
 
 - Edit your server.cfg:
+```
 start esx_jobssecondary
 start esx_joblistingsecondary
 start esx_truckerjobsecondary
@@ -19,6 +20,7 @@ start esx_marathonjobsecondary
 start esx_gardenersecondary 
 start esx_poolcleanersecondary 
 start esx_cityworkssecondary
+```
 
 - If you do not have the basic versions of different trades think to add their SQl file also in your BDD.
 
@@ -42,6 +44,7 @@ Pour l'installer :
 - Ajoutez le SQL : esx_doublejob.sql à votre BDD.
 
 - Editez votre server.cfg : 
+```
 start esx_jobssecondary
 start esx_joblistingsecondary
 start esx_truckerjobsecondary
@@ -51,6 +54,7 @@ start esx_marathonjobsecondary
 start esx_gardenersecondary 
 start esx_poolcleanersecondary 
 start esx_cityworkssecondary
+```
 
 - Si vous n'avez pas les versions de bases des différents métier penser à ajouter leurs fichier SQl aussi dans votre BDD.
 
