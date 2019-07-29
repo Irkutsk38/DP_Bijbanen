@@ -39,7 +39,7 @@ ESX.StartPayCheck = function()
 			end
 
             ---SECONDJOB INCLUDED
-			if salary2 > 0 then  -
+			if salary2 > 0 then  
 				if job2 == 'unemployed2' then -- unemployed
 				xPlayer.addAccountMoney('bank', salary2)
 					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck2'), _U('received_help2', salary2), 'CHAR_BANK_MAZE', 9)
