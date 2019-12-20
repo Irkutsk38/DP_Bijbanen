@@ -28,7 +28,7 @@ Start your server and enjoy the double job only on job pole jobs.
 
 I would try to keep it up to date with the different Updates from es_extended.
 
-Last update date: 06/19/2019  by Slewog.
+Last update date: 20 december 2019  by DutchPlayers.
 
 Does not work with whitelist trades like policeman, mecano etcccc
 
