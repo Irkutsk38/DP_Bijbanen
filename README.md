@@ -1,3 +1,5 @@
+NON of this is my work. I just updated all reletad resources and made them working. Feel free to use.
+
 If you already have the latest version of es_extended: https://github.com/ESX-Org/es_extended
 
 This version of es_extended with the Jobs edit will allow you to add the jobs pole jobs in Double job without having to take your head for hours to embed the lines in es_extend if you have no knowledge in DEV.
@@ -28,7 +30,7 @@ Start your server and enjoy the double job only on job pole jobs.
 
 I would try to keep it up to date with the different Updates from es_extended.
 
-Last update date: 06/19/2019  by Slewog.
+Last update date: 20 december 2019  by DutchPlayers.
 
 Does not work with whitelist trades like policeman, mecano etcccc
 
