@@ -1,5 +1,4 @@
 ESX.StartPayCheck = function()
-
 	function payCheck()
 		local xPlayers = ESX.GetPlayers()
 
@@ -21,7 +20,7 @@ ESX.StartPayCheck = function()
 								if account.money >= salary then -- does the society money to pay its employees?
 									xPlayer.addAccountMoney('bank', salary)
 									account.removeMoney(salary)
-	
+
 									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
 								else
 									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney'), 'CHAR_BANK_MAZE', 1)
@@ -38,10 +37,9 @@ ESX.StartPayCheck = function()
 				end
 			end
 
-            ---SECONDJOB INCLUDED
-			if salary2 > 0 then  
+			if salary2 > 0 then
 				if job2 == 'unemployed2' then -- unemployed
-				xPlayer.addAccountMoney('bank', salary2)
+					xPlayer.addAccountMoney('bank', salary2)
 					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck2'), _U('received_help2', salary2), 'CHAR_BANK_MAZE', 9)
 				elseif Config.EnableSocietyPayouts then -- possibly a society
 					TriggerEvent('esx_society:getSociety', xPlayer.job2.name, function (society)
@@ -50,10 +48,10 @@ ESX.StartPayCheck = function()
 								if account.money >= salary2 then -- does the society money to pay its employees?
 									xPlayer.addAccountMoney('bank', salary2)
 									account.removeMoney(salary2)
-	
+
 									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck2'), _U('received_salary2', salary2), 'CHAR_BANK_MAZE', 9)
 								else
-									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney'), 'CHAR_BANK_MAZE', 1)
+									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney2'), 'CHAR_BANK_MAZE', 1)
 								end
 							end)
 						else -- not a society
@@ -70,9 +68,7 @@ ESX.StartPayCheck = function()
 		end
 
 		SetTimeout(Config.PaycheckInterval, payCheck)
-
 	end
 
 	SetTimeout(Config.PaycheckInterval, payCheck)
-
 end

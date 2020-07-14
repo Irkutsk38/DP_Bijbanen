@@ -221,56 +221,52 @@ ESX.RegisterServerCallback('esx_society:getEmployees', function(source, cb, soci
 end)
 
 ESX.RegisterServerCallback('esx_society:getEmployees2', function(source, cb, society)
+	if Config.EnableESXIdentity then
 
-  if Config.EnableESXIdentity then
-    MySQL.Async.fetchAll(
-      'SELECT * FROM users WHERE job2 = @job2 ORDER BY job2_grade DESC',
-      { ['@job2'] = society },
-      function (results)
-        local employees = {}
+		MySQL.Async.fetchAll('SELECT firstname, lastname, identifier, job2, job2_grade FROM users WHERE job2 = @job2 ORDER BY job2_grade DESC', {
+			['@job2'] = society
+		}, function (results)
+			local employees = {}
 
-        for i=1, #results, 1 do
-          table.insert(employees, {
-            name        = results[i].firstname .. ' ' .. results[i].lastname,
-            identifier  = results[i].identifier,
-            job2 = {
-              name        = results[i].job2,
-              label       = Jobs[results[i].job2].label,
-              grade       = results[i].job2_grade,
-              grade_name  = Jobs[results[i].job2].grades[tostring(results[i].job2_grade)].name,
-              grade_label = Jobs[results[i].job2].grades[tostring(results[i].job2_grade)].label,
-            }
-          })
-        end
+			for i=1, #results, 1 do
+				table.insert(employees, {
+					name       = results[i].firstname .. ' ' .. results[i].lastname,
+					identifier = results[i].identifier,
+					job2 = {
+						name        = results[i].job2,
+						label       = Jobs[results[i].job2].label,
+						grade       = results[i].job2_grade,
+						grade_name  = Jobs[results[i].job2].grades[tostring(results[i].job2_grade)].name,
+						grade_label = Jobs[results[i].job2].grades[tostring(results[i].job2_grade)].label
+					}
+				})
+			end
 
-        cb(employees)
-      end
-    )
-  else
-    MySQL.Async.fetchAll(
-      'SELECT * FROM users WHERE job2 = @job2 ORDER BY job2_grade DESC',
-      { ['@job2'] = society },
-      function (result)
-        local employees = {}
+			cb(employees)
+		end)
+	else
+		MySQL.Async.fetchAll('SELECT name, identifier, job2, job2_grade FROM users WHERE job2 = @job2 ORDER BY job_grade DESC', {
+			['@job'] = society
+		}, function (result)
+			local employees = {}
 
-        for i=1, #result, 1 do
-          table.insert(employees, {
-            name        = result[i].name,
-            identifier  = result[i].identifier,
-            job2 = {
-              name        = result[i].job2,
-              label       = Jobs[result[i].job2].label,
-              grade       = result[i].job2_grade,
-              grade_name  = Jobs[result[i].job2].grades[tostring(result[i].job2_grade)].name,
-              grade_label = Jobs[result[i].job2].grades[tostring(result[i].job2_grade)].label,
-            }
-          })
-        end
+			for i=1, #result, 1 do
+				table.insert(employees, {
+					name       = result[i].name,
+					identifier = result[i].identifier,
+					job2 = {
+						name        = result[i].job2,
+						label       = Jobs[result[i].job2].label,
+						grade       = result[i].job2_grade,
+						grade_name  = Jobs[result[i].job2].grades[tostring(result[i].job2_grade)].name,
+						grade_label = Jobs[result[i].job2].grades[tostring(result[i].job2_grade)].label
+					}
+				})
+			end
 
-        cb(employees)
-      end
-    )
-  end
+			cb(employees)
+		end)
+	end
 end)
 
 ESX.RegisterServerCallback('esx_society:getJob', function(source, cb, society)
@@ -289,6 +285,7 @@ ESX.RegisterServerCallback('esx_society:getJob', function(source, cb, society)
 
 	cb(job)
 end)
+
 ESX.RegisterServerCallback('esx_society:getJob2', function(source, cb, society)
 	local job2    = json.decode(json.encode(Jobs[society]))
 	local grades = {}
@@ -375,10 +372,9 @@ ESX.RegisterServerCallback('esx_society:setJob2', function(source, cb, identifie
 end)
 
 ESX.RegisterServerCallback('esx_society:setJobSalary', function(source, cb, job, grade, salary)
-	local isBoss = isPlayerBoss(source, job)
-	local identifier = GetPlayerIdentifier(source, 0)
+	local xPlayer = ESX.GetPlayerFromId(source)
 
-	if isBoss then
+	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' then
 		if salary <= Config.MaxSalary then
 			MySQL.Async.execute('UPDATE job_grades SET salary = @salary WHERE job_name = @job_name AND grade = @grade', {
 				['@salary']   = salary,
@@ -389,31 +385,28 @@ ESX.RegisterServerCallback('esx_society:setJobSalary', function(source, cb, job,
 				local xPlayers = ESX.GetPlayers()
 
 				for i=1, #xPlayers, 1 do
-					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+					local xTarget = ESX.GetPlayerFromId(xPlayers[i])
 
-					if xPlayer.job.name == job and xPlayer.job.grade == grade then
-						xPlayer.setJob(job, grade)
+					if xTarget.job.name == job and xTarget.job.grade == grade then
+						xTarget.setJob(job, grade)
 					end
 				end
 
 				cb()
 			end)
 		else
-			print(('esx_society: %s attempted to setJobSalary over config limit!'):format(identifier))
+			print(('esx_society: %s attempted to setJobSalary over config limit!'):format(xPlayer.identifier))
 			cb()
 		end
 	else
-		print(('esx_society: %s attempted to setJobSalary'):format(identifier))
+		print(('esx_society: %s attempted to setJobSalary'):format(xPlayer.identifier))
 		cb()
 	end
 end)
-
-
 ESX.RegisterServerCallback('esx_society:setJobSalary2', function(source, cb, job2, grade2, salary)
-	local isBoss2 = isPlayerBoss(source, job2)
-	local identifier = GetPlayerIdentifier(source, 0)
+	local xPlayer = ESX.GetPlayerFromId(source)
 
-	if isBoss2 then
+	if xPlayer.job2.name == job2 and xPlayer.job2.grade_name == 'boss' then
 		if salary <= Config.MaxSalary then
 			MySQL.Async.execute('UPDATE job2_grades SET salary = @salary WHERE job2_name = @job2_name AND grade2 = @grade', {
 				['@salary']   = salary,
@@ -459,7 +452,6 @@ ESX.RegisterServerCallback('esx_society:getOnlinePlayers', function(source, cb)
 
 	cb(players)
 end)
-
 
 
 ESX.RegisterServerCallback('esx_society:getOnlinePlayers2', function(source, cb)
