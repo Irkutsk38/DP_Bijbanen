@@ -17,7 +17,7 @@ AddEventHandler('esx_cityworkssecondary:GiveItem', function()
 		local amount = Config.Zones.Vente.ItemAdd
 		local item = Config.Zones.Vente.ItemDb_name
 		xPlayer.addInventoryItem(item, amount)
-		TriggerClientEvent('esx:showNotification', _source, 'Les reparations sont ~g~finies , aller aux lieux suivant.')
+		TriggerClientEvent('esx:showNotification', _source, 'De reparaties zijn voltooid, ga naar de volgende plaatsen.')
 	end
 
 end)
@@ -34,7 +34,7 @@ local function Vente(source)
 			local Quantity = xPlayer.getInventoryItem(Config.Zones.Vente.ItemRequires).count
 
 			if Quantity < Config.Zones.Vente.ItemRemove then
-				TriggerClientEvent('esx:showNotification', _source, '~r~Vous n avez plus de cheques a encaisser.')
+				TriggerClientEvent('esx:showNotification', _source, '~r~Je hebt geen cheques meer om te verzilveren.')
 				PlayersVente[_source] = false
 			else
 				local amount = Config.Zones.Vente.ItemRemove
@@ -42,7 +42,7 @@ local function Vente(source)
 				Citizen.Wait(1500)
 				xPlayer.removeInventoryItem(item, amount)
 				xPlayer.addMoney(Config.Zones.Vente.ItemPrice)
-				TriggerClientEvent('esx:showNotification', _source, 'Vous avez gagner ~g~$' .. Config.Zones.Vente.ItemPrice)
+				TriggerClientEvent('esx:showNotification', _source, 'Je ontving ~g~€' .. Config.Zones.Vente.ItemPrice)
 				Vente(_source)
 			end
 
@@ -56,11 +56,11 @@ AddEventHandler('esx_cityworkssecondary:startVente', function()
 	local _source = source
 
 	if PlayersVente[_source] == false then
-		TriggerClientEvent('esx:showNotification', _source, '~r~Pas de cheques , pas d argent!')
+		TriggerClientEvent('esx:showNotification', _source, '~r~Geen cheques, geen geld!')
 		PlayersVente[_source] = false
 	else
 		PlayersVente[_source] = true
-		TriggerClientEvent('esx:showNotification', _source, '~g~Encaissement ~w~cheques...')
+		TriggerClientEvent('esx:showNotification', _source, '~g~Cheques ~w~verzilveren...')
 		Vente(_source)
 	end
 end)

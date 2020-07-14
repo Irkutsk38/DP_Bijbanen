@@ -1,8 +1,10 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'bodacious'
 
-description 'ESX Pool Cleaner'
+game 'gta5'
 
-version '1.0'
+description 'ESX Garbage Job'
+
+version '1.2.0'
 
 client_scripts {
   '@es_extended/locale.lua',

@@ -21,7 +21,7 @@ Config.carDel = { x = 806.06011962891, y = 556.18481445313, z = 125.91516876221 
 
 Config.Routes = {
  [1] = {
-	name = "SPR Maratooni",
+	name = "Marathonroute",
 	rewards = {gold = 1000, silver = 750, bronze = 500, fail = 250},
 	track = {
 		[1] = { x = 862.85339355469, y = 526.22344970703, z = 125.91906738281 }, 

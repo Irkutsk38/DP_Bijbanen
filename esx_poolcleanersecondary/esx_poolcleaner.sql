@@ -1,8 +1,8 @@
-INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
-('poolcleaner', 'Nettoyeur de piscine', 0);
+INSERT INTO `jobs` (`name`, `label`) VALUES
+('poolcleaner', 'Zwembad');
 
 INSERT INTO `job_grades` (`job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
-('poolcleaner', 0, 'interim', 'Intérimaire', 150, '{}', '{}');
+('poolcleaner', 0, 'interim', 'Schoonmaker', 150, '{}', '{}');
 
-INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
-('contrat', 'Facture', 100, 0, 1);
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+('contrat', 'Werkbon Zwembad', 1, 0, 1);

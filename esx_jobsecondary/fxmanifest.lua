@@ -1,4 +1,10 @@
-version '1.0.0'
+fx_version 'bodacious'
+
+game 'gta5'
+
+description 'ESX Secondary Jobs'
+
+version '1.2.0'
 
 server_scripts {
   '@mysql-async/lib/MySQL.lua',

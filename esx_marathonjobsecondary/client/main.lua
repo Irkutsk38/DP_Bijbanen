@@ -138,9 +138,9 @@ end
 
 function refreshBlips()
 	if playerData.job2.name ~= nil and playerData.job2.name == 'runner' then 
-		drawBlip(Config.locker, 366, "Vestiaire")					
-		drawBlip(Config.carSpawn, 126, "Inscription")					
-		drawBlip(Config.carDel, 430, "Remise de prix")					
+		drawBlip(Config.locker, 366, "Kleedkamers")					
+		drawBlip(Config.carSpawn, 126, "Inschrijving")					
+		drawBlip(Config.carDel, 430, "Prijsuitreiking")					
 	end
 end
 
@@ -176,20 +176,20 @@ function startWork(flag)
 	if not IsPedInAnyVehicle(playerPed) then 
 		updateCurrentIndex()								
 		if elementAt(taskPoints, currentIndex) == nil then
-			ESX.ShowNotification('~w~vous avez le marathon ~w~ dans les temps ~y~' .. msToClock(stopWatch:SaveTime('lap')))
+			ESX.ShowNotification('~w~Je hebt de marathon ~w~ behaald in ~y~' .. msToClock(stopWatch:SaveTime('lap')))
 			chat("6", "temps: ^4" .. msToClock(stopWatch:GetSavedTime('lap')))
 			jobDone = true
 			setGps(Config.carDel)
-			TriggerEvent('esx:showNotification', "Echangez votre ~b~ prix ~w~ à la cérémonie de remise des prix.")
+			TriggerEvent('esx:showNotification', "Wissel ~b~je prijs ~w~ in bij de prijsuitreiking.")
 		else
 			if flag then
-				ESX.ShowNotification('~w~entracte: ~b~' .. msToClock(stopWatch:GetTime('lap')))
+				ESX.ShowNotification('~w~tussentijd: ~b~' .. msToClock(stopWatch:GetTime('lap')))
 				TriggerServerEvent('esx_marathonjobsecondary:onWaypoint')
 			end
 			setGps(elementAt(taskPoints, currentIndex))	
 		end
 	else
-		ESX.ShowNotification('~r~Pourquoi est tu dans la voiture ?')	
+		ESX.ShowNotification('~r~Waarom zit je in de auto?')	
 	end
 end
 
@@ -203,10 +203,10 @@ function giveWork()
 	
 	taskPoints = table.clone(Config.Routes[route].track)
 	
-	ESX.ShowNotification("Les frais de participation ~r~" .. Config.caution .. "~g~ € ~w~vous ont été prélevés.")
+	ESX.ShowNotification("Deelnamekosten ~r~" .. Config.caution .. "~g~ € ~w~zijn van je afgenomen.")
 	TriggerServerEvent('esx_marathonjobsecondary:getPunished', Config.caution)
 	setGps(elementAt(taskPoints, currentIndex))									     
-	ESX.ShowNotification("~w~ Lorsque vous avez fini, allez à ~b~ la ligne de départ ~w~.") --alert player
+	ESX.ShowNotification("~w~ Wanneer je klaar bent, ga dan naar ~b~de startlijn ~w~.") --alert player
 end
 
 function getPayAmount()
@@ -235,7 +235,7 @@ function getPayAmount()
 		TriggerEvent('esx_marathonjobsecondary:grieve')
 	end
 	
-	ESX.ShowNotification('~w~Vous avez Gagné ~b~' .. amount)
+	ESX.ShowNotification('~w~Je hebt gewonnen ~b~' .. amount)
 	amount = amount + Config.caution
 	TriggerServerEvent('esx_marathonjobsecondary:getPaid', amount)
 	
@@ -249,7 +249,7 @@ function disqualify(reason)
 	jobDone = false											
 	setGps(0)										
 	taskPoints = {}
-	ESX.ShowNotification('Vous êtes  ~r~disqualifié ~y~du concours~r~! ~w~Cause: ~b~' .. reason)
+	ESX.ShowNotification('Je bent  ~r~gediskwalificeerd ~y~van de wedstrijd~r~! ~w~Oorzaak: ~b~' .. reason)
 	TriggerEvent('esx_marathonjobsecondary:ragequit')
 end
 
@@ -259,7 +259,7 @@ function getPaid()
 		getPayAmount()											
 	else
 		TriggerEvent('esx_marathonjobsecondary:ragequit')
-		ESX.ShowNotification('Les frais de participation  ~r~ne sont pas ~w~remboursés')
+		ESX.ShowNotification('De deelnamekosten worden niet terugbetaald')
 	end									
 	jobDone = false
 	onMarathon = false
@@ -275,7 +275,7 @@ Citizen.CreateThread(function()
 	while true do
 		if onDuty and onMarathon then 
 			if IsPedInAnyVehicle(GetPlayerPed(-1)) then
-				disqualify('Utilisation d un véhicule dans une course à pied.')
+				disqualify('Gebruik van een voertuig tijdens een wedstrijd.')
 				Citizen.Wait(500)
 			elseif GetEntitySpeed(GetPlayerPed(-1)) > Config.speedLimit then
 				disqualify('Doppage.')
@@ -317,7 +317,7 @@ function getTrackinfo(lastRoute)
 			return {bronze = math.floor(MarathonTimes[i].laptime * Config.bronze), silver = math.floor(MarathonTimes[i].laptime * Config.silver), gold = MarathonTimes[i].laptime, runner = MarathonTimes[i].runner}
 		end
 	end
-	return {bronze = 9060100, silver = 9051000, gold = 9000000, runner = "Hemuli Harjula"} --default time should be quite high
+	return {bronze = 9060100, silver = 9051000, gold = 9000000, runner = "Willem Alexander"} --default time should be quite high
 end
 
 Citizen.CreateThread(function()
@@ -327,14 +327,14 @@ Citizen.CreateThread(function()
 			if currentIndex == 1 and isInside(pCoords, elementAt(taskPoints, currentIndex), 0.9) then
 				
 				FreezeEntityPosition(GetPlayerPed(-1), true)
-				ESX.ShowNotification('~w~Compétition~g~commencée~w~...')
+				ESX.ShowNotification('~w~Wedstrijd gaat ~g~beginnen~w~...')
 				startWork(false)
 				
 				ESX.TriggerServerCallback('esx_marathonjobsecondary:getTimes', function(times)
 					MarathonTimes = times
 					local trackinfo = getTrackinfo(lastRoute)
-					chat("7", "Route ^5::[ ^9" .. Config.Routes[lastRoute].name .. "^5 ]:: ^4bronze: ^3" .. msToClock(trackinfo.bronze) .. " ^0|^4 argent ^3" .. msToClock(trackinfo.silver) .. " ^0| ^4or: ^3" .. msToClock(trackinfo.gold))
-					chat("7", "L or courait^3@^9" .. trackinfo.runner)
+					chat("7", "Route ^5::[ ^9" .. Config.Routes[lastRoute].name .. "^5 ]:: ^4brons: ^3" .. msToClock(trackinfo.bronze) .. " ^0|^4 zilver ^3" .. msToClock(trackinfo.silver) .. " ^0| ^4goud: ^3" .. msToClock(trackinfo.gold))
+					chat("7", "Record^3@^9" .. trackinfo.runner)
 					Citizen.Wait(3000)
 					ESX.ShowNotification('~r~3~w~...')
 					Citizen.Wait(1000)
@@ -343,7 +343,7 @@ Citizen.CreateThread(function()
 					ESX.ShowNotification('~g~1~w~...')
 					Citizen.Wait(1000)
 					FreezeEntityPosition(GetPlayerPed(-1), false)
-					ESX.ShowNotification('~g~Courez~r~!~y~!~w~!')
+					ESX.ShowNotification('~g~Start~r~!~y~!~w~!')
 					stopWatch:StartTimer('lap')
 				end)
 				
@@ -368,22 +368,22 @@ Citizen.CreateThread(function()
 			if playerData.job2 ~= nil and playerData.job2.name == "runner" and isInside(pCoords, Config.locker, 1.5) then 			
 				isInMarker = true
 				displayHint = true																
-				hintToDisplay = "Appuyez sur E pour changez de vêtements"								
+				hintToDisplay = "Druk op E om van kleding te veranderen"								
 				currentZone = 'locker'																
 			elseif onDuty and elementAt(taskPoints, currentIndex) == nil and isInside(pCoords, Config.carSpawn, 1.5) then
 				isInMarker = true
 				displayHint = true
-				hintToDisplay = "Appuyez sur E pour s'inscrise à la compétitions"
+				hintToDisplay = "Druk op E om aan de competities deel te nemen"
 				currentZone = 'start'
 			elseif playerData.job2 ~= nil and playerData.job2.name == "runner" and onMarathon and isInside(pCoords, Config.carDel, 2.5) then  				
 				isInMarker = true
 				displayHint = true
-				hintToDisplay = "Appuyez sur E pour racheter le prix"
+				hintToDisplay = "Druk op E om de prijs in te wisselen"
 				currentZone = 'pay'
 			else																				
 				isInMarker = false
 				displayHint = false
-				hintToDisplay = "Aucune indication"
+				hintToDisplay = "Geen indicatie"
 				currentZone = 'none'
 			end
 		
@@ -427,26 +427,27 @@ function openMenu()
     'default', GetCurrentResourceName(), 'locker',		
     {
       css      = 'vestiaire',
-	  title    = "Vestiaire du Marathon",							
+	  title    = "Garderobe",	
+	  align    = 'top',							
       elements = {
-        {label = "Vêtement de sport", value = 'marathon_wear'},		
-        {label = "Vêtement civil", value = 'everyday_wear'}	
+        {label = "Sportkleding", value = 'marathon_wear'},		
+        {label = "Je dagelijkse kleding", value = 'everyday_wear'}	
       }
     },
     function(data, menu)									
       if data.current.value == 'everyday_wear' then			
         onDuty = false										
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin2', function(skin)	
-            TriggerEvent('skinchanger:loadSkin', skin)					
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)	
+            TriggerEvent('esx_skin:loadSkin', skin)					
         end)
       end
       if data.current.value == 'marathon_wear' then
         onDuty = true
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin2', function(skin, jobSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
           if skin.sex == 0 then
-              TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+              TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_male)
           else
-              TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+              TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_female)
           end
         end)
       end

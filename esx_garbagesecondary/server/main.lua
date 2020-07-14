@@ -17,7 +17,7 @@ AddEventHandler('esx_garbagesecondary:GiveItem', function()
 		local amount = Config.Zones.Vente.ItemAdd
 		local item = Config.Zones.Vente.ItemDb_name
 		xPlayer.addInventoryItem(item, amount)
-		TriggerClientEvent('esx:showNotification', _source, 'Vous avez récuperer ~g~x' .. amount .. ' poubelle')
+		TriggerClientEvent('esx:showNotification', _source, 'Je hebt ~g~x' .. amount .. ' vuilnisbak opgehaald')
 	end
 
 end)
@@ -34,14 +34,14 @@ local function Vente(source)
 			local Quantity = xPlayer.getInventoryItem(Config.Zones.Vente.ItemRequires).count
 
 			if Quantity < Config.Zones.Vente.ItemRemove then
-				TriggerClientEvent('esx:showNotification', _source, '~r~Vous n\'avez plus de '..Config.Zones.Vente.ItemRequires_name..' a vendre.')
+				TriggerClientEvent('esx:showNotification', _source, '~r~Je hebt geen '..Config.Zones.Vente.ItemRequires_name..' meer.')
 				PlayersVente[_source] = false
 			else
 				local amount = Config.Zones.Vente.ItemRemove
 				local item = Config.Zones.Vente.ItemRequires
 				xPlayer.removeInventoryItem(item, amount)	
 				xPlayer.addMoney(Config.Zones.Vente.ItemPrice)
-				TriggerClientEvent('esx:showNotification', _source, 'Vous avez reçu ~g~$' .. Config.Zones.Vente.ItemPrice)
+				TriggerClientEvent('esx:showNotification', _source, 'Je ontving ~g~€' .. Config.Zones.Vente.ItemPrice)
 				Vente(_source)
 			end
 
@@ -55,11 +55,11 @@ AddEventHandler('esx_garbagesecondary:startVente', function()
 	local _source = source
 
 	if PlayersVente[_source] == false then
-		TriggerClientEvent('esx:showNotification', _source, '~r~Sortez et revenez dans la zone !')
+		TriggerClientEvent('esx:showNotification', _source, '~r~Verlaat en keer terug naar het gebied !')
 		PlayersVente[_source] = false	
 	else
 		PlayersVente[_source] = true
-		TriggerClientEvent('esx:showNotification', _source, '~g~Action ~w~en cours...')
+		TriggerClientEvent('esx:showNotification', _source, '~g~Actie ~w~bezig...')
 		Vente(_source)
 	end
 end)

@@ -129,7 +129,7 @@ function CloakRoomMenu()
         {
             css      = 'vestiaire',
 			img = 'menu_vestiaire',
-			align    = 'top-left',
+			align    = 'top',
             elements = elements
         },
         function(data, menu)
@@ -157,7 +157,7 @@ function CloakRoomMenu()
 				  SetPlayerModel(PlayerId(), model)
 				  SetModelAsNoLongerNeeded(model)
 
-				  TriggerEvent('skinchanger:loadSkin', skin)
+				  TriggerEvent('esx_skin:loadSkin', skin)
 				  TriggerEvent('esx:restoreLoadout')
 				  
 				  local playerPed = GetPlayerPed(-1)
@@ -482,7 +482,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlJustReleased(1, Keys["DELETE"]) and PlayerData.job2 ~= nil and PlayerData.job2.name == Config.nameJob2 then
+		if IsControlJustReleased(1, Keys["F6"]) and PlayerData.job2 ~= nil and PlayerData.job2.name == Config.nameJob2 then
 
 			if Onjob then
 				StopNPCJob(true)
@@ -503,17 +503,17 @@ Citizen.CreateThread(function()
 end)
 
 function setUniform(job, playerPed)
-  TriggerEvent('skinchanger:getSkin', function(skin)
+  TriggerEvent('esx_skin:getSkin', function(skin)
 
     if skin.sex == 0 then
       if Config.Uniforms[job].male ~= nil then
-        TriggerEvent('skinchanger:loadClothes', skin, Config.Uniforms[job].male)
+        TriggerEvent('esx_skin:loadClothes', skin, Config.Uniforms[job].male)
       else
         ESX.ShowNotification(_U('no_outfit'))
       end
     else
       if Config.Uniforms[job].female ~= nil then
-        TriggerEvent('skinchanger:loadClothes', skin, Config.Uniforms[job].female)
+        TriggerEvent('esx_skin:loadClothes', skin, Config.Uniforms[job].female)
       else
         ESX.ShowNotification(_U('no_outfit'))
       end

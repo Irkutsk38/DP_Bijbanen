@@ -1,9 +1,9 @@
 Config                            = {}
 Config.DrawDistance               = 100.0
 Config.nameJob2                    = "poolcleaner"
-Config.nameJobLabel               = "Nettoyeur de piscine"
-Config.platePrefix                = "POOL"
-Config.Locale = 'fr'
+Config.nameJobLabel               = "Zwembad schoonmaker"
+Config.platePrefix                = "ZWEM"
+Config.Locale = 'en'
 
 Config.Blip = {
     Sprite = 389,
@@ -29,8 +29,8 @@ Config.Zones = {
     Type    = 27,
 	BlipSprite = 389,
 	BlipColor = 5,
-	BlipName = Config.nameJobLabel.." : Vestiaire",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au vestiaire',
+	BlipName = Config.nameJobLabel..": Garderobe",
+	hint = 'Druk op ~INPUT_CONTEXT~ om de kleedkamer te openen',
   },
 
   VehicleSpawner = {
@@ -40,8 +40,8 @@ Config.Zones = {
 	Type  = 27,
 	BlipSprite = 389,
 	BlipColor = 5,
-	BlipName = Config.nameJobLabel.." : Véhicule",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au garage',
+	BlipName = Config.nameJobLabel..": Garage",
+	hint = 'Druk op ~INPUT_CONTEXT~ om de garage te openen',
   },
 
   VehicleSpawnPoint = {
@@ -58,8 +58,8 @@ Config.Zones = {
 	Type  = 27,
 	BlipSprite = 389,
 	BlipColor = 5,
-	BlipName = Config.nameJobLabel.." : Retour Véhicule",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
+	BlipName = Config.nameJobLabel..": Voertuig inleveren",
+	hint = 'Druk op ~INPUT_CONTEXT~ om je dienstvoertuig op te slaan',
   },
 
   Vente = {
@@ -69,19 +69,19 @@ Config.Zones = {
 	Type  = 27,
 	BlipSprite = 389,
 	BlipColor = 5,
-	BlipName = Config.nameJobLabel.." : Dépôt",
+	BlipName = Config.nameJobLabel..": Kantoor",
 
 	ItemTime = 500,
-	ItemDb_name = "contrat",
-	ItemName = "Facture",
+	ItemDb_name = "contract",
+	ItemName = "Zwembad BV Werkbon",
 	ItemMax = 100,
 	ItemAdd = 1,
 	ItemRemove = 1,
-	ItemRequires = "contrat",
-	ItemRequires_name = "Facture",
+	ItemRequires = "contract",
+	ItemRequires_name = "Zwembad BV Werkbon",
 	ItemDrop = 100,
 	ItemPrice  = 25,
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour encaisser vos factures',
+	hint = 'Druk op ~INPUT_CONTEXT~ om Zwembad BV Werkbonnen uit te laten betalen',
   },
 
 }

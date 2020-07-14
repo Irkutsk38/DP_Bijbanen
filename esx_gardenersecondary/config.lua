@@ -1,8 +1,8 @@
 Config = {}
 Config.DrawDistance = 100.0
 Config.nameJob2 = "gardener"
-Config.nameJobLabel = "Jardinier"
-Config.platePrefix = "JARD"
+Config.nameJobLabel = "Intratuin"
+Config.platePrefix = "TUIN"
 Config.Locale = 'fr'
 
 Config.Blip = {
@@ -29,8 +29,8 @@ Config.Zones = {
     Type = 27,
     BlipSprite = 385,
     BlipColor = 5,
-    BlipName = Config.nameJobLabel.." : Vestiaire",
-    hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au vestiaire',
+    BlipName = Config.nameJobLabel..": Garderobe",
+    hint = 'Druk op~INPUT_CONTEXT~ om de kleedkamer te openen',
   },
 
   VehicleSpawner = {
@@ -40,8 +40,8 @@ Config.Zones = {
     Type = 27,
     BlipSprite = 385,
     BlipColor = 5,
-    BlipName = Config.nameJobLabel.." : Véhicule",
-    hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au garage',
+	BlipName = Config.nameJobLabel..": Garage",
+	hint = 'Druk op~INPUT_CONTEXT~ om de garage te openen',
   },
 
   VehicleSpawnPoint = {
@@ -58,8 +58,8 @@ Config.Zones = {
     Type = 27,
     BlipSprite = 385,
     BlipColor = 5,
-    BlipName = Config.nameJobLabel.." : Retour Véhicule",
-    hint = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
+	BlipName = Config.nameJobLabel..": Dienstvoertuig opslaan",
+	hint = 'Druk op~INPUT_CONTEXT~ om dienstvoertuig op te slaan',
   },
 
   Vente = {
@@ -69,19 +69,19 @@ Config.Zones = {
     Type = 27,
     BlipSprite = 385,
     BlipColor = 5,
-    BlipName = Config.nameJobLabel.." : Dépôt",
+    BlipName = Config.nameJobLabel..": Kantoor",
 
     ItemTime = 500,
     ItemDb_name = "contrat",
-    ItemName = "Facture",
+    ItemName = "Tuinier Werkbon",
     ItemMax = 100,
     ItemAdd = 1,
     ItemRemove = 1,
     ItemRequires = "contrat",
-    ItemRequires_name = "Facture",
+    ItemRequires_name = "Tuinier Werkbon",
     ItemDrop = 100,
     ItemPrice = 25,
-    hint = 'Appuyez sur ~INPUT_CONTEXT~ pour encaisser vos factures',
+    hint = 'Druk op ~INPUT_CONTEXT~ om werkbonnen te verzilveren',
   },
 
 }

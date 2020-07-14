@@ -28,7 +28,7 @@ AddEventHandler('esx_marathonjobsecondary:onRecord', function(track, laptime)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local _runner = GetPlayerName(_source)
 	
-	Citizen.Trace("Record du tour " .. _track .. ", name :" .. GetPlayerName(source) .. " laptime: " .. _laptime .. "\n")
+	Citizen.Trace("Tourrecord " .. _track .. ", naam :" .. GetPlayerName(source) .. " laptime: " .. _laptime .. "\n")
 	
 	local found = false
 	local record = false
@@ -48,7 +48,7 @@ AddEventHandler('esx_marathonjobsecondary:onRecord', function(track, laptime)
 	if not found then
 		table.insert(MarathonTimes, {id = -1, track = _track, runner = _runner, laptime = _laptime})
 		xPlayer.addMoney(11000)
-		TriggerClientEvent('esx:showNotification', _source, '~g~Nouveaux ~w~ecord~y~!!!~g~+~y~5000~g~€ ~w~bonus!')
+		TriggerClientEvent('esx:showNotification', _source, '~g~Nieuw ~w~record~y~!!!~g~+~y~5000~g~€ ~w~bonus!')
 		Citizen.Trace("Lap record inserted!\n")
 		MySQL.Async.execute(
 		'INSERT INTO `marathon_times` (`track`, `runner`, `laptime`) VALUES (@track, @runner, @laptime)',
@@ -60,7 +60,7 @@ AddEventHandler('esx_marathonjobsecondary:onRecord', function(track, laptime)
 	elseif found and record then
 		table.insert(MarathonTimes, {id = -1 , track = _track, runner = _runner, laptime = _laptime})
 		xPlayer.addMoney(11000)
-		TriggerClientEvent('esx:showNotification', _source, '~g~Bats~w~ le record! ~g~+~w~5000~g~€ ~w~bonus!')
+		TriggerClientEvent('esx:showNotification', _source, '~g~Versla het record! ~g~+~w~5000~g~€ ~w~bonus!')
 		Citizen.Trace("Lap record updated!\n")
 		MySQL.Async.execute(
 		'UPDATE `marathon_times` SET laptime = @laptime, runner = @runner WHERE track = @track',
@@ -70,7 +70,7 @@ AddEventHandler('esx_marathonjobsecondary:onRecord', function(track, laptime)
 			['@track'] = _track
 		})
 	else
-		TriggerClientEvent('esx:showNotification', _source, '~w~Malheureusement vos records ~r~ont été battu~w~sur le temps du retour!')
+		TriggerClientEvent('esx:showNotification', _source, '~w~Helaas zijn je records ~r~ verslagen!')
 	end
 end)
 

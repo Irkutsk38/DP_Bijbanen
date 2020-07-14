@@ -69,16 +69,16 @@ function MenuCloakRoom()
 			if data.current.value == 'citizen_wear' then
 				isInService = false
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin2', function(skin)
-	    			TriggerEvent('skinchanger:loadSkin', skin)
+	    			TriggerEvent('esx_skin:loadSkin', skin)
 				end)
 			end
 			if data.current.value == 'job_wear' then
 				isInService = true
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin2', function(skin, jobSkin)
 	    			if skin.sex == 0 then
-	    				TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+	    				TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_male)
 					else
-	    				TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+	    				TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_female)
 					end
 				end)
 			end
@@ -581,19 +581,19 @@ Citizen.CreateThread(function()
 end)
 
 -- CREATE BLIPS
---Citizen.CreateThread(function()
-	--local blip = AddBlipForCoord(Config.Cloakroom.CloakRoom.Pos.x, Config.Cloakroom.CloakRoom.Pos.y, Config.Cloakroom.CloakRoom.Pos.z)
+Citizen.CreateThread(function()
+	local blip = AddBlipForCoord(Config.Cloakroom.CloakRoom.Pos.x, Config.Cloakroom.CloakRoom.Pos.y, Config.Cloakroom.CloakRoom.Pos.z)
   
-	--SetBlipSprite (blip, 67)
-	--SetBlipDisplay(blip, 4)
-	--SetBlipScale  (blip, 1.2)
-	--SetBlipColour (blip, 5)
-	--SetBlipAsShortRange(blip, true)
+	SetBlipSprite (blip, 67)
+	SetBlipDisplay(blip, 4)
+	SetBlipScale  (blip, 1.2)
+	SetBlipColour (blip, 5)
+	SetBlipAsShortRange(blip, true)
 
-	--BeginTextCommandSetBlipName("STRING")
-	--AddTextComponentString(_U('blip_job'))
-	--EndTextCommandSetBlipName(blip)
---end)
+	BeginTextCommandSetBlipName("STRING")
+	AddTextComponentString(_U('blip_job'))
+	EndTextCommandSetBlipName(blip)
+end)
 
 -------------------------------------------------
 -- Fonctions

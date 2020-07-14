@@ -24,8 +24,8 @@ Config.Zones = {
     Type    = 1,
 	BlipSprite = 354,
 	BlipColor = 46,
-	BlipName = Config.nameJobLabel.." : Depot de la ville",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ acceder au casier',
+	BlipName = Config.nameJobLabel..": Stadsdepot",
+	hint = 'Druk op ~INPUT_CONTEXT~ om kluis te openen',
   },
 
   VehicleSpawner = {
@@ -33,8 +33,8 @@ Config.Zones = {
 	Size  = {x = 1.5, y = 1.5, z = 0.3},
 	Color = {r = 11, g = 203, b = 159},
 	Type  = 1,
-	BlipName = Config.nameJobLabel.." : Vehicule",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour selectionner un vehicule',
+	BlipName = Config.nameJobLabel..": Garage",
+	hint = 'Druk op ~INPUT_CONTEXT~ om dienstvoertuig te pakken',
   },
 
   VehicleSpawnPoint = {
@@ -49,8 +49,8 @@ Config.Zones = {
 	Size  = {x = 3.0, y = 3.0, z = 0.3},
 	Color = {r = 255, g = 0, b = 0},
 	Type  = 1,
-	BlipName = Config.nameJobLabel.." : Retour Vehicle",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour rentrer un vehicule',
+	BlipName = Config.nameJobLabel..": Voertuig inleveren",
+	hint = 'Druk op ~INPUT_CONTEXT~ om dienstvoertuig terug te brengen',
   },
 
   Vente = {
@@ -58,19 +58,19 @@ Config.Zones = {
 	Size  = {x = 2.5, y = 2.5, z = 0.3},
 	Color = {r = 11, g = 203, b = 159},
 	Type  = 1,
-	BlipName = Config.nameJobLabel.." : Payements",
+	BlipName = Config.nameJobLabel..": Kantoor",
 
 	ItemTime = 500,
 	ItemDb_name = "pay_works",
-	ItemName = "Cheques de la ville",
+	ItemName = "ROVA Werkbon",
 	ItemMax = 100,
 	ItemAdd = 1,
 	ItemRemove = 1,
 	ItemRequires = "pay_works",
-	ItemRequires_name = "Cheques de la ville",
+	ItemRequires_name = "ROVA Werkbon",
 	ItemDrop = 100,
 	ItemPrice  = 35,
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour encaisser vos cheques',
+	hint = 'Druk op ~INPUT_CONTEXT~ om uw cheques te verzilveren',
   },
 
 }

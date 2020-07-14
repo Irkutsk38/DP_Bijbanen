@@ -1,19 +1,18 @@
 Config                            = {}
 Config.DrawDistance               = 100.0
 Config.nameJob2                    = "eboueur"
-Config.nameJobLabel               = "Triselec"
-Config.platePrefix                = "EBOU"
+Config.nameJobLabel               = "ROVA"
+Config.platePrefix                = "ROVA"
 Config.Locale = 'fr'
 
 Config.Blip = {
-    Sprite = 318,
-    Color = 52
+    Sprite = 318
 }
 
 Config.Vehicles = {
 	Truck = {
 		Spawner = 1,
-		Label = 'Camion',
+		Label = 'Vuilniswagen',
 		Hash = "trash",
 		Livery = 0,
 		Trailer = "none",
@@ -28,9 +27,8 @@ Config.Zones = {
     Color   = {r = 11, g = 203, b = 159},
     Type    = 1,
 	BlipSprite = 318,
-	BlipColor = 52,
-	BlipName = Config.nameJobLabel.." : Vestiaire",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au vestiaire',
+	BlipName = Config.nameJobLabel..": Hoofdkantoor",
+	hint = 'Druk op~INPUT_CONTEXT~ om de kleedkamer te openen',
   },
 
   VehicleSpawner = {
@@ -39,9 +37,8 @@ Config.Zones = {
 	Color = {r = 11, g = 203, b = 159},
 	Type  = 1,
 	BlipSprite = 318,
-	BlipColor = 52,
-	BlipName = Config.nameJobLabel.." : Véhicule",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au garage',
+	BlipName = Config.nameJobLabel..": Garage",
+	hint = 'Druk op~INPUT_CONTEXT~ om de garage te openen',
   },
 
   VehicleSpawnPoint = {
@@ -57,9 +54,8 @@ Config.Zones = {
 	Color = {r = 255, g = 0, b = 0},
 	Type  = 1,
 	BlipSprite = 318,
-	BlipColor = 52,
-	BlipName = Config.nameJobLabel.." : Retour Véhicule",
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
+	BlipName = Config.nameJobLabel..": Dienstvoertuig opslaan",
+	hint = 'Druk op~INPUT_CONTEXT~ om dienstvoertuig op te slaan',
   },
 
   Vente = {
@@ -68,20 +64,19 @@ Config.Zones = {
 	Color = {r = 11, g = 203, b = 159},
 	Type  = 1,
 	BlipSprite = 318,
-	BlipColor = 52,
-	BlipName = Config.nameJobLabel.." : Déchetterie",
+	BlipName = Config.nameJobLabel..": Vuilnisbelt",
 		
 	ItemTime = 1000,
 	ItemDb_name = "poubelle",
-	ItemName = "poubelle",
+	ItemName = "Afval",
 	ItemMax = 100,
 	ItemAdd = 1,
 	ItemRemove = 1,
 	ItemRequires = "poubelle",
-	ItemRequires_name = "Poubelle",
+	ItemRequires_name = "Afval",
 	ItemDrop = 100,
 	ItemPrice  = 25,
-	hint = 'Appuyez sur ~INPUT_CONTEXT~ pour décharger les poubelles',
+	hint = 'Druk op~INPUT_CONTEXT~ om het afval te storten',
   },
 
 }

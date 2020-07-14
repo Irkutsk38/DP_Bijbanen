@@ -60,6 +60,7 @@ function MenuCloakRoom()
 		{
 			css      = 'vestiaire',
 			title    = _U('cloakroom'),
+			align = 'top',
 			elements = {
 				{label = _U('job_wear'), value = 'job_wear'},
 				{label = _U('citizen_wear'), value = 'citizen_wear'}
@@ -86,7 +87,7 @@ function MenuCloakRoom()
 					  SetPlayerModel(PlayerId(), model)
 					  SetModelAsNoLongerNeeded(model)
 
-					  TriggerEvent('skinchanger:loadSkin', skin)
+					  TriggerEvent('esx_skin:loadSkin', skin)
 					  TriggerEvent('esx:restoreLoadout')
         end)
       end
@@ -94,9 +95,9 @@ function MenuCloakRoom()
 				isInService = true
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin2', function(skin, jobSkin)
 	    			if skin.sex == 0 then
-	    				TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+	    				TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_male)
 					else
-	    				TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+	    				TriggerEvent('esx_skin:loadClothes', skin, jobSkin.skin_female)
 
 					RequestModel(model)
 					while not HasModelLoaded(model) do
@@ -134,6 +135,7 @@ function MenuVehicleSpawner()
 		{
 			css      = 'vehicle',
 			title    = _U('vehiclespawner'),
+			align = 'top',
 			elements = elements
 		},
 		function(data, menu)
@@ -595,19 +597,19 @@ Citizen.CreateThread(function()
 end)
 
 -- CREATE BLIPS
---Citizen.CreateThread(function()
-	--local blip = AddBlipForCoord(Config.Cloakroom.CloakRoom.Pos.x, Config.Cloakroom.CloakRoom.Pos.y, Config.Cloakroom.CloakRoom.Pos.z)
+Citizen.CreateThread(function()
+	local blip = AddBlipForCoord(Config.Cloakroom.CloakRoom.Pos.x, Config.Cloakroom.CloakRoom.Pos.y, Config.Cloakroom.CloakRoom.Pos.z)
   
-	--SetBlipSprite (blip, 357)
-	--SetBlipDisplay(blip, 4)
-	--SetBlipScale  (blip, 1.2)
-	--SetBlipColour (blip, 5)
-	--SetBlipAsShortRange(blip, true)
+	SetBlipSprite (blip, 85)
+	SetBlipDisplay(blip, 4)
+	SetBlipScale  (blip, 1.2)
+	SetBlipColour (blip, -1)
+	SetBlipAsShortRange(blip, true)
 
-	--BeginTextCommandSetBlipName("STRING")
-	--AddTextComponentString(_U('blip_job'))
-	--EndTextCommandSetBlipName(blip)
---end)
+	BeginTextCommandSetBlipName("STRING")
+	AddTextComponentString(_U('blip_job'))
+	EndTextCommandSetBlipName(blip)
+end)
 
 -------------------------------------------------
 -- Fonctions
