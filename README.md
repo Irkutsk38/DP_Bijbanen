@@ -11,6 +11,8 @@ To install it:
 
 - Add SQL: esx_doublejob.sql to your database.
 
+- Add SQL: from all secondary job folders.
+
 - Edit your server.cfg:
 ```
 start esx_jobssecondary
