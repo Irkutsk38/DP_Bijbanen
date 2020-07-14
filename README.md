@@ -1,15 +1,17 @@
-NON of this is my work. I just updated all reletad resources and made them working. Feel free to use.
+# Dutch Players Edit // ESX 1.2 with Secondary Job
+![welcome](https://www.dutch-players.nl/wp-content/uploads/2020/06/dutchplayers_welcome-1024x64.png)
 
-If you already have the latest version of es_extended: https://github.com/ESX-Org/es_extended
-
-This version of es_extended with the Jobs edit will allow you to add the jobs pole jobs in Double job without having to take your head for hours to embed the lines in es_extend if you have no knowledge in DEV.
+This version of es_extended with the Jobs edit will allow you get 2 jobs at the same time.
 
 To install it:
-- Replace your es_extended with my versions.
+**FIX A WORKING ESX 1.2 SERVER FIRST**
+- Then replace your es_extended with this versions.
 
-- Add secondary trades to your Resources folder.
+- Add the secondary jobs to your Resources folder.
 
 - Add SQL: esx_doublejob.sql to your database.
+
+- Add SQL: from all secondary job folders.
 
 - Edit your server.cfg:
 ```
@@ -24,11 +26,12 @@ start esx_poolcleanersecondary
 start esx_cityworkssecondary
 ```
 
-- If you do not have the basic versions of different trades think to add their SQl file also in your BDD.
+![features](https://www.dutch-players.nl/wp-content/uploads/2020/06/dutchplayers_features.png)
+- Use /setjob2 command to set a job.
 
-Start your server and enjoy the double job only on job pole jobs.
+![support](https://www.dutch-players.nl/wp-content/uploads/2020/06/dutchplayers_support.png)
+- We can give you support in our [International Discord Server](https://www.dutch-players.nl/joindiscord)
+- Or visit our [Dutch Website](https://www.dutch-players.nl/)
 
-I would try to keep it up to date with the different Updates from es_extended.
-
-
-
+![original](https://www.dutch-players.nl/wp-content/uploads/2020/06/dutchplayers_original.png)
+We do not take any credits.
