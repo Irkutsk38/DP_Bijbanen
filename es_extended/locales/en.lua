@@ -1,3 +1,4 @@
+
 Locales['en'] = {
   -- Inventory
   ['inventory'] = 'inventory %s / %s',
@@ -22,9 +23,8 @@ Locales['en'] = {
   ['received_weapon_withammo'] = 'you received ~b~%s~s~ with ~o~%sx %s~s~ from ~b~%s~s~',
   ['received_weapon_hasalready'] = '~b~%s~s~ attempted to give you a ~y~%s~s~, but you already have one',
   ['received_weapon_noweapon'] = '~b~%s~s~ attempted to give you ammo for a ~y~%s~s~, but you dont have one',
-  ['gave_account_money'] = 'je gaf ~g~€%s~s~ (%s) to ~y~%s~s~',
-  ['received_account_money'] = 'je ontving ~g~€%s~s~ (%s) van ~b~%s~s~',
-  ['received_account_money2'] = 'je ontving ~g~€%s~s~ (%s) van ~b~%s~s~',
+  ['gave_account_money'] = 'you gave ~g~$%s~s~ (%s) to ~y~%s~s~',
+  ['received_account_money'] = 'you received ~g~$%s~s~ (%s) from ~b~%s~s~',
   ['amount_invalid'] = 'invalid amount',
   ['players_nearby'] = 'no players nearby',
   ['ex_inv_lim'] = 'action not possible, exceeding inventory limit for ~y~%s~s~',
@@ -42,20 +42,19 @@ Locales['en'] = {
   ['keymap_showinventory'] = 'show Inventory',
 
   -- Salary related
-  ['received_salary'] = 'Je ontving salaris: ~g~€%s~s~',
-  ['received_salary2'] = 'Je ontving bijverdiensten: ~g~€%s~s~',
-  ['received_help'] = 'Je ontving uitkering: ~g~€%s~s~',
-  ['received_help2'] = 'Je ontving activiteitenbijdrage: ~g~€%s~s~',
-  ['company_nomoney'] = 'Het bedrijf waar je werkt heeft momenteel geen geld om je uit te betalen.',
-  ['company_nomoney2'] = 'Het bedrijf waar je hobbyt heeft momenteel geen geld om je te betalen.',
-  ['received_paycheck'] = 'Salaris ontvangen',
-  ['received_paycheck2'] = 'Bijverdiensten ontvangen',
-  ['bank'] = 'ING Bank',
+  ['received_paycheck2'] = 'received paycheck',
+  ['received_help2'] = 'you received your welfare check: ~g~€%s~s~',
+  ['received_salary2'] = 'you received your salary: ~g~€%s~s~',
+  ['received_salary'] = 'you received your salary: ~g~$%s~s~',
+  ['received_help'] = 'you received your welfare check: ~g~$%s~s~',
+  ['company_nomoney'] = 'the company you\'re employeed at is too poor to pay out your salary',
+  ['received_paycheck'] = 'received paycheck',
+  ['bank'] = 'maze Bank',
   ['account_bank'] = 'bank',
-  ['account_black_money'] = 'zwart geld',
-  ['account_money'] = 'contant',
+  ['account_black_money'] = 'dirty Money',
+  ['account_money'] = 'cash',
 
-  ['act_imp'] = 'actie onmogelijk',
+  ['act_imp'] = 'action impossible',
   ['in_vehicle'] = 'you cannot give anything to someone in a vehicle',
 
   -- Commands
@@ -111,8 +110,8 @@ Locales['en'] = {
   ['locale_currency'] = '$%s',
 
   -- Weapons
-  ['weapon_knife'] = 'mes',
-  ['weapon_nightstick'] = 'knuppel',
+  ['weapon_knife'] = 'knife',
+  ['weapon_nightstick'] = 'nightstick',
   ['weapon_hammer'] = 'hammer',
   ['weapon_bat'] = 'bat',
   ['weapon_golfclub'] = 'golf club',
