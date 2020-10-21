@@ -1,7 +1,7 @@
 Config              = {}
 Config.DrawDistance = 100.0
 Config.Locale       = 'nl'
-Config.Jobs2         = {}
+Config.Jobs         = {}
 
 Config.MaxCaution = 10000 -- the max caution allowed
 

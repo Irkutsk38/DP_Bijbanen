@@ -1,4 +1,4 @@
-Config.Jobs2.lumberjack = {
+Config.Jobs.lumberjack = {
   BlipInfos = {
     Sprite = 237,
     Color = 4
@@ -13,7 +13,7 @@ Config.Jobs2.lumberjack = {
   },
   Zones = {
     CloakRoom = {
-      Pos   = {x = 1218.33, y = -1267.08, z = 35.42},--
+      Pos   = {x = 1213.87, y = -1249.42, z = 36.33},--
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -24,7 +24,7 @@ Config.Jobs2.lumberjack = {
     },
 
     Wood = {
-      Pos   = {x = -579.32, y = 5373.57, z = 69.5},
+      Pos   = {x = -541.63, y = 5380.57, z = 69.5},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -48,7 +48,7 @@ Config.Jobs2.lumberjack = {
     },
 
     CuttedWood = {
-      Pos   = {x = -560.87, y = 5315.73, z = 72.6},
+      Pos   = {x = -555.81, y = 5319.26, z = 72.6},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -72,7 +72,7 @@ Config.Jobs2.lumberjack = {
     },
 
     Planks = {
-      Pos   = {x = -516.99, y = 5256.77, z = 79.65},
+      Pos   = {x = -507.3, y = 5263.43, z = 80.62},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -96,7 +96,7 @@ Config.Jobs2.lumberjack = {
     },
 
     VehicleSpawner = {
-      Pos   = {x = 1220.4, y = -1269.76, z = 34.36},--
+      Pos   = {x = 1213.97, y = -1262.41, z = 35.23},--
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -109,7 +109,7 @@ Config.Jobs2.lumberjack = {
     },
 
     VehicleSpawnPoint = {
-      Pos   = {x = 1222.2, y = -1289.41, z = 34.21},
+      Pos   = {x = 1194.6257324219, y = -1286.955078125, z = 34.121524810791},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Marker= -1,
       Blip  = false,
@@ -135,7 +135,7 @@ Config.Jobs2.lumberjack = {
     },
 
     Delivery = {
-      Pos   = {x = 1192.39, y = -1341.0, z = 34.13},
+      Pos   = {x = 1198.97, y = -1353.38, z = 35.23},
       Color = {r = 204, g = 204, b = 0},
       Size  = {x = 5.0, y = 5.0, z = 3.0},
       Marker= 1,
@@ -148,7 +148,7 @@ Config.Jobs2.lumberjack = {
           name   = _U('delivery'),
           time   = 3,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
           price  = 50,
           requires = "packaged_plank",
           requires_name = _U('lj_planks'),

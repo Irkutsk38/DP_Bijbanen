@@ -1,4 +1,4 @@
-Config.Jobs2.miner = {
+Config.Jobs.miner = {
   BlipInfos = {
     Sprite = 318,
     Color = 5
@@ -173,10 +173,10 @@ Config.Jobs2.miner = {
       Item  = {
         {
           name   = _U('delivery'),
-          time   = 2,
+          time   = 1.5,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
-          price  = 55,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
+          price  = 40,
           requires = "copper",
           requires_name = _U('m_copper'),
           drop   = 100
@@ -201,8 +201,8 @@ Config.Jobs2.miner = {
           name   = _U('delivery'),
           time   = 2,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
-          price  = 60,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
+          price  = 50,
           requires = "iron",
           requires_name = _U('m_iron'),
           drop   = 100
@@ -225,10 +225,10 @@ Config.Jobs2.miner = {
       Item  = {
         {
           name   = _U('delivery'),
-          time   = 3,
+          time   = 2,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
-          price  = 95,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
+          price  = 60,
           requires = "gold",
           requires_name = _U('m_gold'),
           drop   = 100
@@ -253,8 +253,8 @@ Config.Jobs2.miner = {
           name   = _U('delivery'),
           time   = 2,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
-          price  = 7,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
+          price  = 70,
           requires = "diamond",
           requires_name = _U('m_diamond'),
           drop   = 100

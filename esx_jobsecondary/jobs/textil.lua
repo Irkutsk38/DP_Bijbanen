@@ -1,4 +1,4 @@
-Config.Jobs.textil = {
+Config.Jobs2.tailor = {
   BlipInfos = {
     Sprite = 366,
     Color = 4
@@ -35,9 +35,9 @@ Config.Jobs.textil = {
       Item  = {
         {
           name   = _U('dd_wool'),
-          db_name= "whool",
-          time   = 5000,
-          max    = 100,
+          db_name= "wool",
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
           requires = "nothing",
@@ -61,11 +61,11 @@ Config.Jobs.textil = {
         {
           name   = _U('dd_fabric'),
           db_name= "fabric",
-          time   = 5000,
-          max    = 100,
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
-          requires = "whool",
+          requires = "wool",
           requires_name = _U('dd_wool'),
           drop   = 100
         }
@@ -86,8 +86,8 @@ Config.Jobs.textil = {
         {
           name   = _U('dd_clothing'),
           db_name= "clothe",
-          time   = 5000,
-          max    = 100,
+          time   = 5,
+          max    = 20,
           add    = 2,
           remove = 1,
           requires = "fabric",
@@ -152,10 +152,10 @@ Config.Jobs.textil = {
       Item  = {
         {
           name   = _U('delivery'),
-          time   = 3000,
+          time   = 3,
           remove = 1,
-          max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-          price  = 4,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
+          price  = 45,
           requires = "clothe",
           requires_name = _U('dd_clothing'),
           drop   = 100

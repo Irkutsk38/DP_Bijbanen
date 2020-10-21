@@ -1,4 +1,4 @@
-Config.Jobs.fuel = {
+Config.Jobs2.fueler = {
   BlipInfos = {
     Sprite = 436,
     Color = 5
@@ -34,10 +34,10 @@ Config.Jobs.fuel = {
       Type  = "work",
       Item  = {
         {
-          name   = _U('f_fuel'),
+          name   = _U('f_fueler'),
           db_name= "petrol",
-          time   = 5000,
-          max    = 100,
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
           requires = "nothing",
@@ -55,22 +55,22 @@ Config.Jobs.fuel = {
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
       Blip  = true,
-      Name  = _U('f_fuel_refine'),
+      Name  = _U('f_fueler_refine'),
       Type  = "work",
       Item  = {
         {
-          name   = _U('f_fuel_refine'),
+          name   = _U('f_fueler_refine'),
           db_name= "petrol_raffin",
-          time   = 5000,
-          max    = 100,
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
           requires = "petrol",
-          requires_name = _U('f_fuel'),
+          requires_name = _U('f_fueler'),
           drop   = 100
         }
       },
-      Hint  = _U('f_refine_fuel_button'),
+      Hint  = _U('f_refine_fueler_button'),
       GPS = {x = 265.752, y = -3013.39, z = 4.73275}
     },
 
@@ -80,22 +80,22 @@ Config.Jobs.fuel = {
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
       Blip  = true,
-      Name  = _U('f_fuel_mixture'),
+      Name  = _U('f_fueler_mixture'),
       Type  = "work",
       Item  = {
         {
           name   = _U('f_gas'),
           db_name= "essence",
-          time   = 5000,
-          max    = 100,
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
           requires = "petrol_raffin",
-          requires_name = _U('f_fuel_refine'),
+          requires_name = _U('f_fueler_refine'),
           drop   = 100
         }
       },
-      Hint  = _U('f_fuel_mixture_button'),
+      Hint  = _U('f_fueler_mixture_button'),
       GPS = {x = 491.406, y = -2163.37, z = 4.91827}
     },
 
@@ -152,10 +152,10 @@ Config.Jobs.fuel = {
       Item  = {
         {
           name   = _U('delivery'),
-          time   = 3000,
+          time   = 3,
           remove = 1,
-          max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-          price  = 5,
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
+          price  = 75,
           requires = "essence",
           requires_name = _U('f_gas'),
           drop   = 100

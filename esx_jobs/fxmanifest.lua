@@ -7,7 +7,7 @@ description 'ESX Jobs'
 version '1.1.0'
 
 server_scripts {
-	'@es_extended/locale.lua',
+	'@DP_Framework/locale.lua',
 	'locales/nl.lua',
 	'config.lua',
 
@@ -17,7 +17,7 @@ server_scripts {
 }
 
 client_scripts {
-	'@es_extended/locale.lua',
+	'@DP_Framework/locale.lua',
 	'locales/nl.lua',
 	'config.lua',
 
@@ -27,5 +27,5 @@ client_scripts {
 }
 
 dependencies {
-	'es_extended'
+	'DP_Framework'
 }

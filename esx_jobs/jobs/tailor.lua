@@ -1,40 +1,41 @@
-Config.Jobs2.lumberjack = {
+Config.Jobs.tailor = {
   BlipInfos = {
-    Sprite = 237,
+    Sprite = 366,
     Color = 4
   },
   Vehicles = {
     Truck = {
       Spawner = 1,
-      Hash = "phantom",
-      Trailer = "trailers",
+      Hash = "youga2",
+      Trailer = "none",
       HasCaution = true
     }
   },
   Zones = {
     CloakRoom = {
-      Pos   = {x = 1218.33, y = -1267.08, z = 35.42},--
+      Pos   = {x = 706.735412597656, y = -960.902893066406, z = 29.3953247070313},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
       Blip  = true,
-      Name  = _U('lj_locker_room'),
+      Name  = _U('dd_dress_locker'),
       Type  = "cloakroom",
       Hint  = _U('cloak_change'),
+      GPS = {x = 740.808776855469, y = -970.066650390625, z = 23.4693908691406}
     },
 
-    Wood = {
-      Pos   = {x = -579.32, y = 5373.57, z = 69.5},
+    Whool = {
+      Pos   = {x = 1978.92407226563, y = 5171.70166015625, z = 46.6391181945801},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
       Blip  = true,
-      Name  = _U('lj_mapblip'),
+      Name  = _U('dd_wool'),
       Type  = "work",
       Item  = {
         {
-          name   = _U('lj_wood'),
-          db_name= "wood",
+          name   = _U('dd_wool'),
+          db_name= "wool",
           time   = 5,
           max    = 20,
           add    = 1,
@@ -44,59 +45,62 @@ Config.Jobs2.lumberjack = {
           drop   = 100
         }
       },
-      Hint  = _U('lj_pickup')
+      Hint  = _U('dd_pickup'),
+      GPS = {x = 715.954650878906, y = -959.639587402344, z = 29.3953247070313}
     },
 
-    CuttedWood = {
-      Pos   = {x = -560.87, y = 5315.73, z = 72.6},
+    Fabric = {
+      Pos   = {x = 715.954650878906, y = -959.639587402344, z = 29.3953247070313},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
-      Blip  = true,
-      Name  = _U('lj_cutwood'),
+      Blip  = false,
+      Name  = _U('dd_fabric'),
       Type  = "work",
       Item  = {
         {
-          name   = _U('lj_cutwood'),
-          db_name= "cutted_wood",
-          time   = 3,
+          name   = _U('dd_fabric'),
+          db_name= "fabric",
+          time   = 5,
           max    = 20,
           add    = 1,
           remove = 1,
-          requires = "wood",
-          requires_name = _U('lj_wood'),
+          requires = "wool",
+          requires_name = _U('dd_wool'),
           drop   = 100
         }
       },
-      Hint  = _U('lj_cutwood_button')
+      Hint  = _U('dd_makefabric'),
+      GPS = {x = 712.928283691406, y = -970.5869140625, z = 29.3953247070313}
     },
 
-    Planks = {
-      Pos   = {x = -516.99, y = 5256.77, z = 79.65},
+    Clothe = {
+      Pos   = {x = 712.928283691406, y = -970.5869140625, z = 29.3953247070313},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
-      Blip  = true,
-      Name  = _U('lj_board'),
+      Blip  = false,
+      Name  = _U('dd_clothing'),
       Type  = "work",
       Item  = {
         {
-          name   = _U('lj_planks'),
-          db_name= "packaged_plank",
-          time   = 3,
+          name   = _U('dd_clothing'),
+          db_name= "clothe",
+          time   = 5,
           max    = 20,
-          add    = 1,
+          add    = 2,
           remove = 1,
-          requires = "cutted_wood",
-          requires_name = _U('lj_cutwood'),
+          requires = "fabric",
+          requires_name = _U('dd_fabric'),
           drop   = 100
         }
       },
-      Hint  = _U('lj_pick_boards')
+      Hint  = _U('dd_makeclothing'),
+      GPS = {x = 429.595855712891, y = -807.341613769531, z = 28.4911441802979}
     },
 
     VehicleSpawner = {
-      Pos   = {x = 1220.4, y = -1269.76, z = 34.36},--
+      Pos   = {x = 740.808776855469, y = -970.066650390625, z = 23.4693908691406},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 204, g = 204, b = 0},
       Marker= 1,
@@ -105,23 +109,25 @@ Config.Jobs2.lumberjack = {
       Type  = "vehspawner",
       Spawner = 1,
       Hint  = _U('spawn_veh_button'),
-      Caution = 100
+      Caution = 100,
+      GPS = {x = 1978.92407226563, y = 5171.70166015625, z = 46.6391181945801}
     },
 
     VehicleSpawnPoint = {
-      Pos   = {x = 1222.2, y = -1289.41, z = 34.21},
+      Pos   = {x = 747.31396484375, y = -966.235778808594, z = 23.705005645752},
       Size  = {x = 3.0, y = 3.0, z = 1.0},
       Marker= -1,
       Blip  = false,
       Name  = _U('service_vh'),
       Type  = "vehspawnpt",
       Spawner = 1,
-      Heading = 285.1
+      Heading = 270.1,
+      GPS = 0
     },
 
     VehicleDeletePoint = {
-      Pos   = {x = 1202.86, y = -1231.87, z = 35.23},--
-      Size  = {x = 5.0, y = 5.0, z = 1.0},
+      Pos   = {x = 693.796325683594, y = -963.010498046875, z = 22.8247337341309},
+      Size  = {x = 3.0, y = 3.0, z = 1.0},
       Color = {r = 255, g = 0, b = 0},
       Marker= 1,
       Blip  = false,
@@ -135,7 +141,7 @@ Config.Jobs2.lumberjack = {
     },
 
     Delivery = {
-      Pos   = {x = 1192.39, y = -1341.0, z = 34.13},
+      Pos   = {x = 429.595855712891, y = -807.341613769531, z = 28.4911441802979},
       Color = {r = 204, g = 204, b = 0},
       Size  = {x = 5.0, y = 5.0, z = 3.0},
       Marker= 1,
@@ -148,14 +154,15 @@ Config.Jobs2.lumberjack = {
           name   = _U('delivery'),
           time   = 3,
           remove = 1,
-          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
           price  = 50,
-          requires = "packaged_plank",
-          requires_name = _U('lj_planks'),
+          requires = "clothe",
+          requires_name = _U('dd_clothing'),
           drop   = 100
         }
       },
-      Hint  = _U('lj_deliver_button')
+      Hint  = _U('dd_deliver_clothes'),
+      GPS = {x = 1978.92407226563, y = 5171.70166015625, z = 46.6391181945801}
     }
   }
 }

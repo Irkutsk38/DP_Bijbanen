@@ -1,11 +1,4 @@
---[[
-============================================
-          By Bryz LARMITE (Bryzvideo)
-            	Dericou RP
-============================================
-]]
-
-Config.Jobs.fermier = {
+Config.Jobs2.gardener = {
   BlipInfos = {
     Sprite = 67,
     Color = 3
@@ -25,7 +18,7 @@ Config.Jobs.fermier = {
       Color = {r = 0, g = 0, b = 0},
       Marker= 1,
       Blip  = true,
-      Name  = _U('m_fermier_locker'),
+      Name  = _U('m_gardener_locker'),
       Type  = "cloakroom",
       Hint  = _U('cloak_change'),
       GPS = {x = 2240.00, y = 5159.62, z = 56.89}
@@ -42,9 +35,9 @@ Config.Jobs.fermier = {
       Item  = {
         {
           name   = _U('m_ble'),
-          db_name= "ble",
-          time   = 5000,
-          max    = 100,
+          db_name= "corn",
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
           requires = "nothing",
@@ -67,12 +60,12 @@ Config.Jobs.fermier = {
       Item  = {
         {
           name   = _U('m_farine'),
-          db_name= "farine",
-          time   = 5000,
-          max    = 100,
+          db_name= "faina",
+          time   = 5,
+          max    = 20,
           add    = 1,
           remove = 1,
-          requires = "ble",
+          requires = "corn",
           requires_name = _U('ble'),
           drop   = 100
         },
@@ -134,11 +127,11 @@ Config.Jobs.fermier = {
       Item  = {
         {
           name   = _U('delivery'),
-          time   = 3000,
+          time   = 3,
           remove = 1,
-          max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-          price  = 4,
-          requires = "farine",
+          max    = 20, -- if not present, probably an error at itemQtty >= item.max in DP_Banen_Algemeen_sv.lua
+          price  = 50,
+          requires = "faina",
           requires_name = _U('m_farine'),
           drop   = 100
         }

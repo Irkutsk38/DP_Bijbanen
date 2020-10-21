@@ -1,21 +1,21 @@
-Locales['en'] = {
+Locales['nl'] = {
   -- Global menus
-  ['cloakroom']                 = 'Garderobe',
+  ['cloakroom']                 = 'Garderobe - bijbaan',
   ['cloak_change']              = 'Druk op ~INPUT_PICKUP~ om van kleding te veranderen.',
-  ['citizen_wear']              = 'Persoonlijke kleding',
-  ['job_wear']                  = 'Werk kleding',
+  ['citizen_wear']              = 'Ga uit dienst',
+  ['job_wear']                  = 'Ga in dienst',
   ['bank_deposit_g']              = 'Een borg van ~g~€',
   ['bank_deposit_r']            = 'Een borg van ~r~€',
   ['bank_deposit2']             = '€ ~s~borg is naar je terug betaald.',
   ['bank_nodeposit']            = "je hebt nergens borg tegoed",
   ['foot_work']                 = 'Je moet te voet zijn om te kunnen werken.',
   ['next_point']                = 'Ga naar het volgende punt toe nadat je hier klaar bent.',
-  ['security_deposit']          = 'De borg bedraagd ~g~€',
-  ['not_your_vehicle']          = "this is not your vehicle or you must be a driver.",
+  ['security_deposit']          = 'De borg bedraagt ~g~€',
+  ['not_your_vehicle']          = "dit is niet uw voertuig of je moet een chauffeur zijn.",
   ['in_vehicle']                = 'Je moet in een voertuig zitten.',
   ['wrong_point']               = "Je bent niet op de juiste plek om af te leveren.",
   ['max_limit']                 = 'Je draagt het maximum: ',
-  ['not_enough']                = "je hebt niet genoeg",
+  ['not_enough']                = "je hebt niet genoeg ",
   ['not_enough2']               = ' om verder te gaan met werken.',
   ['caution_taken']             = ' ~s~is van je afgenomen.',
   ['caution_returned']          = ' ~s~is aan je teruggegeven.',
@@ -28,7 +28,7 @@ Locales['en'] = {
   ['delivery_point']            = 'Afleverpunt',
   ['delivery']                  = 'Levering',
  -- Lumber Jack job
-  ['lj_locker_room']            = 'houthakkers garderobe',
+  ['lj_locker_room']            = 'Houthakker - bijbaan',
   ['lj_mapblip']                = 'hout stapel',
   ['lj_wood']                   = 'hout',
   ['lj_pickup']                 = 'druk op ~INPUT_PICKUP~ om het hout te verzamelen.',
@@ -41,7 +41,7 @@ Locales['en'] = {
   ['lj_deliver_button']         = 'druk op ~INPUT_PICKUP~ om de houten planken af te leveren.',
 
   -- Fisherman
-  ['fm_fish_locker']            = 'vissers garderobe',
+  ['fm_fish_locker']            = 'Visser - bijbaan',
   ['fm_fish']                   = 'vissers',
   ['fm_fish_area']              = 'vis gebied',
   ['fm_fish_button']            = 'druk op ~INPUT_PICKUP~ om te gaan vissen.',
@@ -53,20 +53,20 @@ Locales['en'] = {
   ['fm_deliver_fish']           = 'druk op ~INPUT_PICKUP~ om de vis af te leveren.',
 
   -- Fuel
-  ['f_oil_refiner']             = 'rafinarij kleed kamer',
+  ['f_oil_refiner']             = 'Rafinarij - bijbaan',
   ['f_drill_oil']               = 'boor voor olie',
-  ['f_fuel']                    = 'olie',
+  ['f_fueler']                    = 'olie',
   ['f_drillbutton']             = 'druk op ~INPUT_PICKUP~ om naar olie te boren.',
-  ['f_fuel_refine']             = 'olie verwerken',
-  ['f_refine_fuel_button']      = 'druk op ~INPUT_PICKUP~ om de olie te verwerken.',
-  ['f_fuel_mixture']            = 'maak van olie benzine',
+  ['f_fueler_refine']             = 'olie verwerken',
+  ['f_refine_fueler_button']      = 'druk op ~INPUT_PICKUP~ om de olie te verwerken.',
+  ['f_fueler_mixture']            = 'maak van olie benzine',
   ['f_gas']                     = 'benzine',
-  ['f_fuel_mixture_button']     = 'druk op ~INPUT_PICKUP~ om van olie benzine te maken.',
+  ['f_fueler_mixture_button']     = 'druk op ~INPUT_PICKUP~ om van olie benzine te maken.',
   ['f_deliver_gas']             = 'benzine afleveren',
   ['f_deliver_gas_button']      = 'druk op ~INPUT_PICKUP~ om de benzine af te leveren.',
 
   -- Miner
-  ['m_miner_locker']            = 'mijnwerkers garderobe',
+  ['m_miner_locker']            = 'Mijnwerker - bijbaan',
   ['m_rock']                    = 'steen',
   ['m_pickrocks']               = 'druk op ~INPUT_PICKUP~ om steen te verzamelen.',
   ['m_washrock']                = 'stenen spoelen',
@@ -87,11 +87,11 @@ Locales['en'] = {
   ['m_melt_button']             = 'druk op ~INPUT_PICKUP~ om de stenen om te smelten.',
 
   -- Reporter
-  ['reporter_name']             = 'Nieuwstad Omroep Stichting',
+  ['reporter_name']             = 'Nieuwstad Omroep Stichting - bijbaan',
   ['reporter_garage']           = 'druk op ~INPUT_PICKUP~ om naar de garage te gaan.',
 
   -- Slaughterer
-  ['s_slaughter_locker']        = 'slagers garderobe',
+  ['s_slaughter_locker']        = 'Slager - bijbaan',
   ['s_hen']                     = 'kippen ren',
   ['s_alive_chicken']           = 'levende kippen',
   ['s_catch_hen']               = 'druk op ~INPUT_PICKUP~ om kippen te gaan vangen.',
@@ -105,7 +105,7 @@ Locales['en'] = {
   ['s_deliver']                 = 'druk op ~INPUT_PICKUP~ om de verpakte kip af te leveren.',
 
   -- Dress Designer
-  ['dd_dress_locker']           = 'jurken ontwerpers garderobe',
+  ['dd_dress_locker']           = 'Kledingmaker - bijbaan',
   ['dd_wool']                   = 'wol',
   ['dd_pickup']                 = 'druk op ~INPUT_PICKUP~ om wol te verzamelen.',
   ['dd_fabric']                 = 'stof',
@@ -113,4 +113,15 @@ Locales['en'] = {
   ['dd_clothing']               = 'kleding',
   ['dd_makeclothing']           = 'druk op ~INPUT_PICKUP~ om kleding te maken van de stof.',
   ['dd_deliver_clothes']        = 'druk op ~INPUT_PICKUP~ om de kleding af te leveren.',
+  
+   -- Fermier
+  ['ble']                    = "Maïs",
+  ['m_gardener_locker']       = "Kluis",
+  ['m_ble']                  = 'Maïs',
+  ['m_recoltble']            = 'Druk op ~INPUT_PICKUP~ om maïs te verzamelen.',
+  ['m_ble_smelting']         = 'Malen',
+  ['m_farine']               = 'Bloem',
+  ['m_sell_farine']          = 'Wederverkoop van bloem',
+  ['m_deliver_farine']       = 'Druk op ~INPUT_PICKUP~ om bloem te verkopen.',
+  ['m_ble_button']           = 'Druk op ~INPUT_PICKUP~ om tarwe te malen.',
   }
