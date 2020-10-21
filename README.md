@@ -15,6 +15,7 @@ To install it:
 
 - Edit your server.cfg:
 ```
+start esx_jobs
 start esx_jobssecondary
 start esx_joblistingsecondary
 start esx_truckerjobsecondary
