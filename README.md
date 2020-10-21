@@ -1,6 +1,7 @@
 # Dutch Players Edit // ESX 1.2 with Secondary Job
 ![welcome](https://www.dutch-players.nl/wp-content/uploads/2020/06/dutchplayers_welcome-1024x64.png)
 
+22 JOBS!
 This version of es_extended with the Jobs edit will allow you get 2 jobs at the same time.
 
 To install it:
